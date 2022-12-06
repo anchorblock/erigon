@@ -60,7 +60,7 @@ services:
     <<: *default-erigon-service
     command: |
       rpcdaemon ${RPCDAEMON_FLAGS-} --http.addr=0.0.0.0 --http.vhosts=* --http.corsdomain=* --ws
-      --private.api.addr=erigon:9090 --txpool.api.addr=txpool:9094 --datadir=/home/erigon/.local/share/erigon
+      --private.api.addr=erigon:9090 --http.api=eth,debug,net,web3,trace,db,shh,tg --txpool.api.addr=txpool:9094 --datadir=/home/erigon/.local/share/erigon
     ports: [ "8545:8545" ]
 
 
